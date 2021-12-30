@@ -2,11 +2,12 @@
 
 A social application where makers and builders can share there small wins and update on how their getting on with their projects.
 
-<img src="https://uploads-ssl.webflow.com/61913c7aa46a3183c309d1c6/6193a5c2c290b414d7c87085_mockup-removebg-preview.png" width="128"/>
-<img src="https://uploads-ssl.webflow.com/61913c7aa46a3183c309d1c6/6193a5c3b6e20c1adbbbd2dc_mockup4-removebg-preview.png" width="128"/>
-<img src="https://uploads-ssl.webflow.com/61913c7aa46a3183c309d1c6/6193a5c271e55645bd156675_mockup5-removebg-preview.png" width="128"/>
-<img src="https://uploads-ssl.webflow.com/61913c7aa46a3183c309d1c6/6193a5c2c290b414d7c87085_mockup-removebg-preview.png" width="128"/>
-<img src="https://uploads-ssl.webflow.com/61913c7aa46a3183c309d1c6/6193a5c2c290b414d7c87085_mockup-removebg-preview.png" width="128"/>
+<p float="left">
+<img src="https://uploads-ssl.webflow.com/61913c7aa46a3183c309d1c6/6193a5c2c290b414d7c87085_mockup-removebg-preview.png" width="175"/> <img src="https://uploads-ssl.webflow.com/61913c7aa46a3183c309d1c6/6193a5c3b6e20c1adbbbd2dc_mockup4-removebg-preview.png" width="128"/>
+<img src="https://uploads-ssl.webflow.com/61913c7aa46a3183c309d1c6/6193a5c271e55645bd156675_mockup5-removebg-preview.png" width="175"/>
+<img src="https://uploads-ssl.webflow.com/61913c7aa46a3183c309d1c6/6193a5c2c290b414d7c87085_mockup-removebg-preview.png" width="175"/>
+<img src="https://uploads-ssl.webflow.com/61913c7aa46a3183c309d1c6/6193a5c2c290b414d7c87085_mockup-removebg-preview.png" width="175"/>
+</p>
 
 The stack for this project is Flutter and firebase.
 
