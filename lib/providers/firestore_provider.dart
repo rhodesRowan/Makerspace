@@ -247,7 +247,7 @@ class FirestoreProvider {
     try {
       return await _reportedContentPath.doc().set({
         "post" : postID,
-        "type" : type,
+        "type" : type.index,
         "description" : description
       });
     } catch (exception) {

@@ -66,7 +66,8 @@ class ReportState extends State<ReportContent> {
                     onPressed: () async {
                       if (_type != null) {
                         try {
-                          context.read<FirestoreProvider>().reportPost(widget.postID, _type!, _descriptionController.text);
+                          await context.read<FirestoreProvider>().reportPost(widget.postID, _type!, _descriptionController.text);
+                          Navigator.of(context).pop(null);
                         } catch (exception) {
                           showFailedAuthDialog(context, exception.toString());
                         }
