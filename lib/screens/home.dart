@@ -1,65 +1,68 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_practise/screens/leaderboard.dart';
-import 'package:firebase_practise/screens/members.dart';
-import 'package:firebase_practise/screens/profile.dart';
-import 'package:firebase_practise/screens/timer_page.dart';
-import 'package:firebase_practise/services/auth_service.dart';
-import 'package:firebase_practise/services/firestore_service.dart';
+import 'package:makerspace/helpers/app_colours.dart';
+import 'package:makerspace/providers/auth_provider.dart';
+import 'package:makerspace/providers/firestore_provider.dart';
+import 'package:makerspace/screens/leaderboard.dart';
+import 'package:makerspace/screens/profile.dart';
+import 'package:makerspace/screens/tasks.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
-import 'package:provider/provider.dart';
-
+import 'package:provider/src/provider.dart';
 import 'main_feed.dart';
 
 class Home extends StatefulWidget {
-
   @override
-  HomeState createState() => HomeState();
+  State createState() => _HomeState();
 }
 
-class HomeState extends State<Home> {
+class _HomeState extends State<Home> {
+  @override
+  Widget build(BuildContext build) {
+    return PersistentTabView(context,
+        backgroundColor: AppColors.backgroundColor,
+        screens: _buildScreens(),
+        items: _navBarItems(),
+        navBarStyle: NavBarStyle.style12);
+  }
 
-  PersistentTabController _tabController = PersistentTabController(initialIndex: 0);
+  @override
+  void initState() {
+    super.initState();
+  }
 
   List<Widget> _buildScreens() {
     return [
       MainFeed(),
+      Tasks(),
       Leaderboard(),
-      Members(),
-      Profile()
+      Profile(context.read<AuthProvider>().getCurrentUser()!.uid)
     ];
   }
 
   List<PersistentBottomNavBarItem> _navBarItems() {
     return [
       PersistentBottomNavBarItem(
-          icon: Icon(CupertinoIcons.flame, color: Colors.orange),
-          activeColorPrimary: Colors.orange
-      ),
+          icon: Icon(Icons.home_filled), // Icon(CupertinoIcons.home),
+          title: "Feed",
+          activeColorPrimary: AppColors.orange,
+          inactiveColorPrimary: Colors.white70),
       PersistentBottomNavBarItem(
-          icon: Icon(CupertinoIcons.chart_bar_circle, color: Colors.redAccent),
-          activeColorPrimary: Colors.redAccent
-      ),
+          icon: Icon(Icons.book),
+          inactiveIcon: Icon(Icons.book),
+          title: "Tasks",
+          activeColorPrimary: AppColors.orange,
+          inactiveColorPrimary: Colors.white70),
       PersistentBottomNavBarItem(
-          icon: Icon(CupertinoIcons.bell, color: Colors.redAccent),
-          activeColorPrimary: Colors.redAccent
-      ),
+          icon: Icon(Icons.whatshot_sharp),
+          title: "Explore",
+          activeColorPrimary: AppColors.orange,
+          inactiveColorPrimary: Colors.white70),
       PersistentBottomNavBarItem(
-          icon: Icon(CupertinoIcons.profile_circled, color: Colors.redAccent),
-          activeColorPrimary: Colors.redAccent
-      ),
+          icon: Icon(Icons.person),
+          title: "Profile",
+          activeColorPrimary: AppColors.orange,
+          inactiveColorPrimary: Colors.white70)
     ];
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return PersistentTabView(
-        context,
-        controller: _tabController,
-        screens: _buildScreens(),
-        items: _navBarItems(),
-        navBarStyle: NavBarStyle.style2,
-    );
   }
 }

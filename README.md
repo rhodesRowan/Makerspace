@@ -1,4 +1,4 @@
-# firebase_practise
+# makerspace
 
 A new Flutter application.
 

@@ -1,6 +1,6 @@
 {
-    "name": "firebase_practise",
-    "short_name": "firebase_practise",
+    "name": "makerspace",
+    "short_name": "makerspace",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
